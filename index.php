@@ -1,6 +1,6 @@
 //PHP Code
  <?php 
- ini_set('display_errors', 'On');
+ ini_set('serial_php/display_errors', 'On');
 
 require("php_serial.class.php"); 
 if (isset($_GET['action'])) 
