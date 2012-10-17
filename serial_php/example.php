@@ -1,4 +1,7 @@
 <?php
+
+ini_set(‘display_errors’, ‘Off’)
+echo "starting script";
 include "php_serial.class.php";
 
 // Let's start the class
