@@ -9,7 +9,7 @@ $serial = new phpSerial;
 // If you are using Windows, make sure you disable FIFO from the modem's 
 // Device Manager properties pane (Advanced >> Advanced Port Settings...)
 
-$serial->deviceSet("COM4");
+$serial->deviceSet("/dev/ttyUSB");
 
 // Then we need to open it
 $serial->deviceOpen('w+');
@@ -21,11 +21,7 @@ stream_set_timeout($serial->_dHandle, 10);
 $serial->confBaudRate(9600);
 
 // SMS inbox query - mode command and list command
-$serial->sendMessage("AT",1);
-var_dump($serial->readPort());
-$serial->sendMessage("AT+CMGF=1\n\r",1);
-var_dump($serial->readPort());
-$serial->sendMessage("AT+CMGL=\"ALL\"\n\r",2);
+
 var_dump($serial->readPort());
 
 // If you want to change the configuration, the device must be closed
