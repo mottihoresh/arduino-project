@@ -1,6 +1,6 @@
 <?php
 
-ini_set(‘display_errors’, ‘Off’)
+ini_set(‘display_errors’, ‘on’)
 echo "starting script";
 include "php_serial.class.php";
 
