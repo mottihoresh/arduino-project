@@ -21,6 +21,8 @@ stream_set_timeout($serial->_dHandle, 10);
 $serial->confBaudRate(9600);
 
 // SMS inbox query - mode command and list command
+// To write into
+$serial->sendMessage("Hello !");
 
 var_dump($serial->readPort());
 
