@@ -1,5 +1,7 @@
 //PHP Code
  <?php 
+ ini_set('display_errors', 'On');
+
 require("php_serial.class.php"); 
 if (isset($_GET['action'])) 
 { 
@@ -7,7 +9,8 @@ $serial = new phpSerial;
 $serial->deviceSet("/dev/ttyACM0");
 $serial->confBaudRate(9600);
 $serial->deviceOpen();
-
+    if ($_GET['action'] == "greenon") 
+  { 
   $serial->sendMessage("0"); 
   $done = false;
   $line = "";
@@ -28,8 +31,8 @@ $serial->deviceOpen();
         }
       }
     }
-  
-  if ($_GET['action'] == "greenoff") 
+  }  
+  else if ($_GET['action'] == "greenoff") 
   { 
     $serial->sendMessage("1\r"); 
     }
